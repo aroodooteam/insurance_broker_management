@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_analytic_history_broker_line_form" model="ir.ui.view">
+            <field name="name">analytic.history.form</field>
+            <field name="model">analytic.history</field>
+            <field name="inherit_id" ref="insurance_management.view_analytic_history_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='Risk Line']" position="after">
+                    <page string="Brokers" name="Brokers">
+                        <field name="broker_line_ids">
+                            <tree string="Broker Line" editable="top">
+                                <field name="name"/>
+                                <field name="rate"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
