@@ -13,5 +13,6 @@ class AnalyticHistoryBrokerLine(models.Model):
 
     name = fields.Many2one(comodel_name='res.partner', string='Broker', domain="[('is_broker', '=', True)]", help='List of broker')
     rate = fields.Float(string='Rate', digits_compute=dp.get_precision('Account'), help='Rate for broker')
+    amount = fields.Float(string='Amount', digits_compute=dp.get_precision('Account'), help='Fixed amount for broker')
     history_id = fields.Many2one(comodel_name='analytic.history', string='History')
 
